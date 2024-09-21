@@ -1,6 +1,38 @@
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$docker_context\
+$conda\
+$time\
+$line_break$character"""
+
+[username]
+show_always = true
+style_user = "bold green"
+style_root = "bold yellow"
+format = '[ ( $user) ]($style)'
+
 [character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[➜](bold red)"
+
+[time]
+disabled = false
+time_format = "%X"
+style = " bg:color_bg1"
+format = "[at [ ( $time)](bold white)]($style)"
 
 [aws]
 symbol = "  "
@@ -19,6 +51,10 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
+truncation_length = 5
+truncate_to_repo = false
+style = " bg:color_bg1"
+format = "[in [($path )](bold cyan)]($style)"
 
 [docker_context]
 symbol = " "
